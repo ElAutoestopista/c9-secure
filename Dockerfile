@@ -6,7 +6,6 @@ RUN apt-get --yes install apache2 net-tools python-software-properties python ma
 RUN groupadd cloud9 && useradd -g cloud9 -G cloud9 -md /opt/cloud9  cloud9
 RUN su - cloud9 -c "git clone https://github.com/c9/core /opt/cloud9/sdk"
 RUN su - cloud9 -c "/opt/cloud9/sdk/scripts/install-sdk.sh"
-COPY scripts/cloud9.service /lib/systemd/system
-RUN ln -s /lib/systemd/system/cloud9.service /etc/systemd/system/cloud9.service
-RUN systemctl enable cloud9.service
+EXPOSE 8181
+CMD ["node server.js ","-p 8181 -l 0.0.0.0 -a admin:admin"]
 
