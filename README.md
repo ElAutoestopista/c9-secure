@@ -10,7 +10,7 @@ Simply deploy with the command:
 
 If you want only local access (p.e. you want to proxify it with nginx or similar) just run:
 
-```docker run -d --name c9-secure -p 8181:8181 -v /path/to/your/workspace:/opt/cloud9/workspace elautoestopista/c9-secure:latest```
+```docker run -d --name c9-secure -p 127.0.0.1:8181:8181 -v /path/to/your/workspace:/opt/cloud9/workspace elautoestopista/c9-secure:latest```
 
 Default user/password: admin/admin
 
